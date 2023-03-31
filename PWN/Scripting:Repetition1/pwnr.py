@@ -1,19 +1,10 @@
 from pwn import *
+#run with python3 pwnr.py DEBUG to see flag
+io = remote("ctf.hackucf.org", 10101)
 
-io = remote("ctf.hackucf.org", 10102)
-flag = False
 while(1):
    #recieve stream of characters until "value: "
    io.recvuntil("Value: ", timeout=1)
-   
-   if flag == False:
-      val1 = io.recvline()
-      val = val1
-      flag = True
-   else:
-      val = io.recvline()
-      print(val)
-   if val != b"Repeat: Good job!\n":
-      io.sendline(val)
-   else:
-      io.sendline(val1)
+   val = io.recvline()
+   io.recvuntil("Repeat: ")
+   io.sendline(val)
