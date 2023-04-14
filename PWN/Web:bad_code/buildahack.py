@@ -20,6 +20,7 @@ def main():
         for password_attempt in permutations:
             response_time, response_text = send_request(url, password_attempt)
             if response_time > max_response_time:
+                
                 max_response_time = response_time
                 best_candidate = password_attempt
                 print(f'Current best candidate {best_candidate}, with reponse time {max_response_time}')
