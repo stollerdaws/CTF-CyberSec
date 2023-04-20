@@ -49,7 +49,7 @@ def Brutus(hex):
                 topPlain = plaintext
     return topKey, topPlain, mostSimilar            
 
-scores = []
+'''scores = []
 f = open('4.txt', 'r')
 for line in f:
     key, mess, score = Brutus(line)
@@ -59,7 +59,7 @@ for line in f:
             if lang.lang == 'en' and lang.prob >= .99:
                 scores.append((key, mess, score))
 for score in scores:    
-    print(f'Probable English found! Key: {score[0]}\n Plaintext: {score[1]}, Score: {score[2]}')
+    print(f'Probable English found! Key: {score[0]}\n Plaintext: {score[1]}, Score: {score[2]}')'''
 
 #target_string = input("Enter your encoded hex string\n")
 #key, mess = Brutus(target_string)
