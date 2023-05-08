@@ -41,6 +41,7 @@ def Brutus(hex):
 
     for key in range(256):
         plaintext = XOR(hex, key)
+        print(f'\nPlain: {plaintext}')
         if is_english(plaintext, English_frequency):
             score = Freq_sim(checkFreq(plaintext), English_frequency)
             if score > mostSimilar:
@@ -49,17 +50,18 @@ def Brutus(hex):
                 topPlain = plaintext
     return topKey, topPlain, mostSimilar            
 
-'''scores = []
+scores = []
 f = open('4.txt', 'r')
-for line in f:
+for line in f.read():
     key, mess, score = Brutus(line)
+
     if key is not None:
         languages = detect_langs(mess)
         for lang in languages:
             if lang.lang == 'en' and lang.prob >= .99:
                 scores.append((key, mess, score))
 for score in scores:    
-    print(f'Probable English found! Key: {score[0]}\n Plaintext: {score[1]}, Score: {score[2]}')'''
+    print(f'Probable English found! Key: {score[0]}\n Plaintext: {score[1]}, Score: {score[2]}')
 
 #target_string = input("Enter your encoded hex string\n")
 #key, mess = Brutus(target_string)

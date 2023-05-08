@@ -25,7 +25,7 @@ def quadHam(byte_array, n):
             num_pairs += 1
     return total_distance / num_pairs
 
-f = open('6.txt', 'r')
+f = open('9.txt', 'r')
 base64ciph = f.read(); f.close()
 #decode the base64 string to bytes
 decoded_bytes = base64.b64decode(base64ciph)
