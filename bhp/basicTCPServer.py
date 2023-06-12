@@ -1,7 +1,7 @@
 import socket 
 import threading
 
-IP = '0.0.0.0'
+IP = '10.0.0.156'
 PORT = 9998
 
 def main():
@@ -22,3 +22,4 @@ def handle_client(client_socket):
         sock.send(b'ACK')
 if __name__ == '__main__':
     main()        
+
