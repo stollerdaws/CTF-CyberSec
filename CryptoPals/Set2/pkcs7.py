@@ -15,11 +15,11 @@ def pkcs7_unpad(data):
     print(f'\nUnpadded Block: {data[:-padding_length]}')
     return data[:-padding_length]
 
-
+'''
 data = input("Input some data to pad\n")
 blockSize = int(input("input the block size\n"))
 
 padded = pkcs7_pad(bytes(data, 'ascii'), blockSize)
 unpadded = pkcs7_unpad(padded)
 
-print(f'Padded Block: {padded}\nUnpadded Block : {unpadded}')
+print(f'Padded Block: {padded}\nUnpadded Block : {unpadded}')'''

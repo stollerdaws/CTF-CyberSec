@@ -25,16 +25,17 @@ def quadHam(byte_array, n):
             num_pairs += 1
     return total_distance / num_pairs
 
-f = open('9.txt', 'r')
+'''f = open('9.txt', 'r')
 base64ciph = f.read(); f.close()
 #decode the base64 string to bytes
 decoded_bytes = base64.b64decode(base64ciph)
-# Turn the bytes to a hex string
-hexStr = binascii.hexlify(decoded_bytes).decode()
+# Turn the bytes to a hex string'''
+hexStr = '610c6115651072014317463d73127613732c73036102653a6217742b701c61086e1a651d742b69075f2f6c0d69075f2c690e681c5f673604650364023944'
+decoded_bytes = binascii.unhexlify(hexStr)
 # Iterate over possible key lengths and determine which is most likely
 mindist = 150
 bestlen = 0
-for guessed_length in range(2, 41):
+for guessed_length in range(1, 6):
     currentHamDist = quadHam(decoded_bytes, guessed_length) / guessed_length
     if currentHamDist < mindist:
         mindist = currentHamDist
@@ -57,7 +58,8 @@ for block in blocked:
 for block in transposedBlocks:
     #Use single byte brute force to find best key for all key[index]
     key, plain, score = Brutus(binascii.hexlify(block).decode())
-    keyGuess += chr(key)
+    if key is not None:
+        keyGuess += chr(key)
 print(f'Calculated the following key: {keyGuess}\n')
 
 plaintext = XORDecode(hexStr, keyGuess)
