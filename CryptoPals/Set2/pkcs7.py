@@ -1,8 +1,8 @@
 def pkcs7_pad(data, block_size): # up to pkcs7 standard
     padding_length = block_size - (len(data) % block_size)
     padding = bytes([padding_length]) * padding_length
-    print(f'\nPadded Block: {data + padding}')
-    return data + padding
+    turner = data + padding
+    return turner
 
 def pkcs7_unpad(data):
     padding_length = data[-1]

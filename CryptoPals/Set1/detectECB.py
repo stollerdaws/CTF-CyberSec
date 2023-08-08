@@ -1,7 +1,14 @@
 from AESDecrypt import decrypt
+from collections import Counter, defaultdict
+#with open('8.txt', 'r') as f:
+#    ciphs = f.readlines()
 
-with open('8.txt', 'r') as f:
-    ciphs = f.readlines()
+def repeated_blocks(buffer, block_length=16):
+    reps = defaultdict(lambda: -1)
+    for i in range(0, len(buffer), block_length):
+        block = bytes(buffer[i:i + block_length])
+        reps[block] += 1
+    return sum(reps.values())
 
 def detect_ECB(ciphs, block_size=16):
     mostRepeats = 0
@@ -10,22 +17,22 @@ def detect_ECB(ciphs, block_size=16):
     for i, ciph in enumerate(ciphs):
         ciph_bytes = bytes.fromhex(ciph.strip())
         blocks = [ciph_bytes[i:i + block_size] for i in range(0, len(ciph_bytes), block_size)]
-# This is checking if a block repeats, the odds naturally are 1/2^128
-# So if we have a repeat, it's there on purpose or incredibly unlucky
-        repeats = 0
-        for block in set(blocks): #Use set to eliminate duplicates
-            count = blocks.count(block)
-            if count > 1:
-                repeats += count - 1 # -1 to only count repetitions
-        if repeats > mostRepeats:
-            mostRepeats = repeats
-            ECBBoiii = ciph_bytes
-            ECBindex = i
+        for j, block in enumerate(blocks):
+            # use Counter to get a dictionary of byte counts
+            byte_counts = Counter(block)
+            # get the count of the most common byte
+            repeats = byte_counts.most_common(1)[0][1] if byte_counts else 0
+            if repeats > 1 and repeats > mostRepeats:
+                print(f'New most repeats: {repeats}')
+                mostRepeats = repeats
+                ECBBoiii = ciph_bytes
+                ECBindex = (i, j)
+            print(f'Block {j} in Line {i} has {repeats} repeats')
     return ECBindex, ECBBoiii
-
+'''
 index, ciph = detect_ECB(ciphs)
 
 if ciph:
     print(f'Found it at index {index}, here she: {ciph}\n')
 else:
-    print("None detected")    
+    print("None detected")    '''
