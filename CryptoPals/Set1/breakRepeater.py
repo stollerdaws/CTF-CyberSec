@@ -30,7 +30,7 @@ base64ciph = f.read(); f.close()
 #decode the base64 string to bytes
 decoded_bytes = base64.b64decode(base64ciph)
 # Turn the bytes to a hex string'''
-hexStr = '610c6115651072014317463d73127613732c73036102653a6217742b701c61086e1a651d742b69075f2f6c0d69075f2c690e681c5f673604650364023944'
+hexStr = '89cb5f6de8a783e9629a2b5e77eb68fa89e5cbeb617be6dab1eeb8f9c85aaec7adfa48a775afacb9c92c'
 decoded_bytes = binascii.unhexlify(hexStr)
 # Iterate over possible key lengths and determine which is most likely
 mindist = 150

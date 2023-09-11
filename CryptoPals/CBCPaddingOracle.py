@@ -51,5 +51,7 @@ def attack():
     bytearray(iv)[-1] = 100
     print(func2(ciph, iv))
 
+    
+
 attack()
     

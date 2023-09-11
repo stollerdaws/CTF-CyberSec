@@ -63,6 +63,6 @@ for line in f.read():
 for score in scores:    
     print(f'Probable English found! Key: {score[0]}\n Plaintext: {score[1]}, Score: {score[2]}')
 '''
-#target_string = input("Enter your encoded hex string\n")
+target_string = input("Enter your encoded hex string\n")
 #key, mess = Brutus(target_string)
 #print(f'Recovered English! Key: {key}\n Plaintext: {mess}')
