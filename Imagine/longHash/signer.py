@@ -7,13 +7,11 @@ def sign(m):
     return sha256(m).hexdigest()
 
 p = getPrime(256)
-print(long_to_bytes(p))
 
 def auth(sig, msg):
     #if isPrime(msg):
     #    return "No no no, composites only."
     msg = long_to_bytes(msg)
-    print(msg, long_to_bytes(p))
 
     if sig != sign(msg):
         return "Authentication Failed."
