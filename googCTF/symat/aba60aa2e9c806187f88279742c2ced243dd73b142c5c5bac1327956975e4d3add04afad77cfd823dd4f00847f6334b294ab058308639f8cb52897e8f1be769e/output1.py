@@ -56,7 +56,7 @@ for i in range(0, y_len):
                   new_matrix[nx_len - j, i] = pixel
                   next_position -= 1
              
-new_image.save("./symatrix.png")
+new_image.save("./symatrix0.png")
 new_image.close()
 base_image.close()             
  
