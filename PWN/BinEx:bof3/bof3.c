@@ -31,4 +31,3 @@ int main(void) {
 	fp();
 	return 0;
 }
-0x08049256

