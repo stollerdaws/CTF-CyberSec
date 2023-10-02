@@ -1,0 +1,17 @@
+We want to crash the program because run.sh will print the flag
+if we do, the vulnerability here is:
+String Indexing:
+The following code in the main function can potentially crash the program:
+
+let first = &word[0..1];
+let rest = &word[1..];
+
+This code assumes that word has at least one character. If it doesn't, then the program will panic due to an out-of-bounds index. Moreover, Rust's string slicing is based on byte indices, not character indices. So, if a word starts with a multi-byte character (e.g., certain Unicode characters), this code would split the character in the middle, which will cause the program to panic.
+
+To crash the program:
+
+Enter a string that starts with a multi-byte Unicode character. For example, the character "é" is a two-byte character in UTF-8.
+
+Input: éabc
+
+The program will attempt to slice the "é" character in the middle, leading to a panic.

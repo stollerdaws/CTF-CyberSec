@@ -1,0 +1,1 @@
+To solve this problem I opened GDB, then typed start and then jump print_flag and that printed the flag for me.

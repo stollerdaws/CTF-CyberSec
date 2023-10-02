@@ -1,0 +1,1 @@
+I used jd-gui to decompile the jar file and then a private function had the flag as a static string.
