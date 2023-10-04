@@ -1,0 +1,3 @@
+In this program we have a simple guessing game which can be beaten with ghidra,
+then we get a user controlled printf, which we can use to overwrite the address
+of a library function with the address of win, easy peasy PWNtools

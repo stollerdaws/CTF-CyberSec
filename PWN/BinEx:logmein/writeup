@@ -1,0 +1,5 @@
+This is a basic format string problem where we have a pointer that we
+can overwrite to some nonzero value such that the program calls getflag.
+We can figure out our offset to our format parameter by sending in %1$08x and so on until we reach the one that prints the characters 
+at the beginning of our payload. Once we have that we can put the address
+of the pointer given to us in that spot so that when we perform our write, it writes over that pointer with 00000 and thats the whole ticket
