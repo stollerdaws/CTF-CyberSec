@@ -30,7 +30,7 @@ base64ciph = f.read(); f.close()
 #decode the base64 string to bytes
 decoded_bytes = base64.b64decode(base64ciph)
 # Turn the bytes to a hex string'''
-hexStr = '89cb5f6de8a783e9629a2b5e77eb68fa89e5cbeb617be6dab1eeb8f9c85aaec7adfa48a775afacb9c92c'
+hexStr = '2c4b367d557134331f34712d731f34701f2773341f2615640c723f13'
 decoded_bytes = binascii.unhexlify(hexStr)
 # Iterate over possible key lengths and determine which is most likely
 mindist = 150
@@ -42,6 +42,8 @@ for guessed_length in range(1, 6):
         bestlen = guessed_length
 # Found our match        
 print(f'Hamming distances caluclated, key is probably {bestlen} bytes\n')
+#just for this time
+bestlen = 7
 # split ciphertext in to blocks of size len(key_length)
 blocked = [bytearray(decoded_bytes[i:i+bestlen]) for i in range(0, len(decoded_bytes), bestlen)]
 # create a first block of every first byte, second of every second byte and so on

@@ -2,8 +2,8 @@ import itertools
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad, pad
 
-iv = bytes.fromhex('1df49bc50bc2432bd336b4609f2104f7')
-ct = bytes.fromhex('a40c6502436e3a21dd63c1553e4816967a75dfc0c7b90328f00af93f0094ed62')
+iv = bytes.fromhex('189b39ae37214d6c2abed9affefbcb0b')
+ct = bytes.fromhex('87b3a1774c53d3c32b1925249cc77e4767951cf690e9e65cd5c9b31d2a95340f')
 BS = 16
 
 def brute_force_key():
@@ -15,7 +15,7 @@ def brute_force_key():
 
             try:
                 pt = unpad(cipher.decrypt(ct), BS)
-                if pt.startswith(b"cvctf{"):
+                if pt.startswith(b"FSUCTF{"):
                     return pt
             except ValueError:
                 pass

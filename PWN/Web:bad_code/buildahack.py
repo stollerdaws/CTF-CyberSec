@@ -8,7 +8,7 @@ def main():
     working_password = input("Enter your current working password: ")
     url = 'http://ctf.hackucf.org:4000/bad_code/bad_code.php'
     # Create a character set with alphanumeric characters and special characters
-    characters = string.ascii_letters + string.digits + string.punctuation + " "
+    characters = string.ascii_letters + string.digits + " "
     flag_pattern = re.compile(r"flag\{.+?\}")
     flag_found = False
     # Generate all possible permutations by appending characters to the working password

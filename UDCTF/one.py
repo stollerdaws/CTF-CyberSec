@@ -4,7 +4,7 @@ import string
 # Base URL
 base_url = "https://best-bathroom-default-rtdb.firebaseio.com/flag/"
 suffix = ".json"
-endpoint = "UDCTF{1ce_L4br4t0ry_s3C0nd_Fl0or_b0"
+endpoint = "UDCTF"
 
 # Characters to try: lowercase, uppercase, digits, and some symbols
 characters_to_try = string.ascii_letters + string.digits + "'-_.{};!$%&*@"

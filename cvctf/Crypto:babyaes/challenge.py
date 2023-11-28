@@ -14,5 +14,5 @@ print(f"iv = {iv.hex()}")
 print(f"ct = {ct.hex()}")
 
 # Output:
-# iv = 1df49bc50bc2432bd336b4609f2104f7
-# ct = a40c6502436e3a21dd63c1553e4816967a75dfc0c7b90328f00af93f0094ed62
+# iv = 4c5e65275057fc585f79bfc861586795
+# ct = f9ddc12d2a93b22617ffe638330d0d46856c9529631150f7f6a6d9cd1ea94049
