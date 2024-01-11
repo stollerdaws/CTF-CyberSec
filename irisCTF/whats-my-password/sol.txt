@@ -1,0 +1,178 @@
+(miniforge3) ubuntusfs@ubuntusfs-Latitude-5540:~/Downloads$ ^C
+(miniforge3) ubuntusfs@ubuntusfs-Latitude-5540:~/Downloads$ /home/ubuntusfs/miniforge3/bin/python /home/ubuntusfs/Downloads/whats-my-password/solve.py
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 1: i
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 2: r
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 3: i
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 4: s
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 5: c
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 6: t
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 7: f
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 8: {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 9: m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 10: y
+
+
+
+
+
+
+
+
+
+
+
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 11: _
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 12: p
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 13: 4
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 14: 2
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 15: 2
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 16: W
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 17: 0
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 18: R
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 19: D
+
+
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 20: _
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 21: 1
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 22: S
+
+
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 23: _
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 24: S
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 25: Q
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 26: l
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 27: 1
+
+
+{"username":"root","password":"IamAvEryC0olRootUsr"}
+Found character at position 28: }
+Password for 'skat' is: irisctf{my_p422W0RD_1S_SQl1}

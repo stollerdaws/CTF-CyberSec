@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  ctf-challenge-32bit:
+    build: 
+      context: .  # Assuming the Dockerfile and all necessary files are in the current directory
+    ports:
+      - "1993:1993"  # Expose and map port 1993
+    volumes:
+      - ./logsearch:/logsearch  # Mount the logsearch binary
+      - ./logs.txt:/logs.txt    # Mount logs.txt
+      - ./flag.txt:/flag.txt    # Mount flag.txt
+      - ./start.sh:/start.sh    # Mount start.sh

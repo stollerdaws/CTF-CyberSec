@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  ctf-challenge-32bit:
+    build: 
+      context: .  # Assuming the Dockerfile and all necessary files are in the current directory
+    ports:
+      - "1118:1118"  # Expose and map port 2425
+    volumes:
+      - ./vuln:/vuln # Mount the logsearch binary
+      - ./flag.txt:/flag.txt    # Mount flag.txt
+      - ./start.sh:/start.sh    # Mount start.sh

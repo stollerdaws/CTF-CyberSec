@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  ctf-challenge:
+    build: 
+      context: .  # Assuming docker-compose.yml is in the same directory as the Dockerfile
+    ports:
+      - "1337:1337"  # Expose port 1337 on the host and map it to port 1337 in the container
+    volumes:
+      - ./s:/chal/s  # Mount the s directory from your host to /chal/s in the container
+      - ./flag.txt:/chal/flag.txt  # Mount flag.txt
+      - ./start.sh:/chal/start.sh  # Mount start.sh

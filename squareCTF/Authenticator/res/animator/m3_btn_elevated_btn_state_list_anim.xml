@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <selector>
+        <item android:state_enabled="true" android:state_hovered="true">
+            <set>
+                <objectAnimator android:duration="@2131296267" android:valueTo="@2131099875" android:valueType="0" android:propertyName="" />
+                <objectAnimator android:duration="0" android:valueTo="@2131099855" android:valueType="0" android:propertyName="" />
+            </set>
+        </item>
+        <item android:state_enabled="true">
+            <set>
+                <objectAnimator android:duration="@2131296267" android:valueTo="@2131099874" android:valueType="0" android:propertyName="" android:startDelay="@2131296266" />
+                <objectAnimator android:duration="0" android:valueTo="@2131099855" android:valueType="0" android:propertyName="" />
+            </set>
+        </item>
+        <item>
+            <set>
+                <objectAnimator android:duration="0" android:valueTo="@2131099854" android:valueType="0" android:propertyName="" />
+                <objectAnimator android:duration="0" android:valueTo="@2131099853" android:valueType="0" android:propertyName="" />
+            </set>
+        </item>
+    </selector>
+</set>

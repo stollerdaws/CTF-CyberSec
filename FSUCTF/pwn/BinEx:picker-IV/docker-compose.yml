@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  ctf-challenge-2:
+    build: 
+      context: .  # Assuming docker-compose.yml is in the same directory as the Dockerfile
+    ports:
+      - "1886:1886"  # Expose port 1886 on the host and map it to port 1886 in the container
+    volumes:
+      - ./picker-IV:/picker-IV  # Mount the chall directory from your host to /chall in the container
+      - ./flag.txt:/flag.txt  # Mount flag.txt
+      - ./start.sh:/start.sh  # Mount start.sh

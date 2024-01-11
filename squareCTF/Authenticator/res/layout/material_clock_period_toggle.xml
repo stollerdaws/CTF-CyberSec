@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.button.MaterialButtonToggleGroup android:orientation="1" android:id="@2131230972" android:visibility="2" android:layout_width="@2131100198" android:layout_height="@2131100195" android:contentDescription="@2131689537" app:checkedButton="@id/material_clock_period_am_button" app:selectionRequired="true" app:singleSelection="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.button.MaterialButton android:id="@2131230970" android:layout_width="-2" android:text="@2131689551" android:insetTop="8.0dip" style="?materialButtonOutlinedStyle" />
+    <com.google.android.material.button.MaterialButton android:id="@2131230971" android:layout_width="-2" android:text="@2131689555" android:insetBottom="8.0dip" style="?materialButtonOutlinedStyle" />
+</com.google.android.material.button.MaterialButtonToggleGroup>

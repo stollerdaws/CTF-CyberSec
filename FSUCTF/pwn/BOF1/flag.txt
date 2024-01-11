@@ -1,0 +1,1 @@
+FSUCTF{g00d_st4rt}

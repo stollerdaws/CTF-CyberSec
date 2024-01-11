@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="34" android:compileSdkVersionCodename="" package="com.example.authenticator" platformBuildVersionCode="34" platformBuildVersionName="14">
+    <permission android:name="" android:protectionLevel="0x00000002"/>
+    <uses-permission android:name=""/>
+    <application android:allowBackup="true" android:appComponentFactory="" android:dataExtractionRules="@2131886081" android:debuggable="true" android:extractNativeLibs="false" android:fullBackupContent="@2131886080" android:icon="@2131558400" android:label="@2131689500" android:roundIcon="@2131558401" android:supportsRtl="true" android:theme="@2131755553">
+        <activity android:exported="true" android:name="">
+            <intent-filter>
+                <action android:name=""/>
+                <category android:name=""/>
+            </intent-filter>
+        </activity>
+        <provider android:authorities="" android:exported="false" android:name="">
+            <meta-data android:name="" android:value=""/>
+            <meta-data android:name="" android:value=""/>
+            <meta-data android:name="" android:value=""/>
+        </provider>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="" android:permission="">
+            <intent-filter>
+                <action android:name=""/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name=""/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name=""/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name=""/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

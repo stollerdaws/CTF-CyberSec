@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="-1" android:layout_height="-2"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="0x00000030" android:orientation="0" android:id="@2131231010" android:paddingLeft="@2131100279" android:paddingRight="@2131100279" android:baselineAligned="false" android:paddingStart="@2131100279" android:paddingEnd="@2131100279" style="?materialCalendarHeaderLayout">
+        <FrameLayout android:id="@2131231012" android:paddingLeft="@2131100285" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="0.0dip" android:layout_height="-1" android:layout_weight="1.0" android:paddingStart="@2131100285">
+            <include layout="@layout/mtrl_picker_header_title_text" />
+            <include layout="@layout/mtrl_picker_header_selection_text" />
+        </FrameLayout>
+        <include layout="@layout/mtrl_picker_header_toggle" />
+    </LinearLayout>
+    <View android:layout_gravity="0x00000050" android:layout_width="-1" android:layout_height="@2131100281" style="?materialCalendarHeaderDivider" />
+</merge>

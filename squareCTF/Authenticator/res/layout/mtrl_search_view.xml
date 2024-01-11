@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View android:id="@2131231050" android:background="?2130903971" android:layout_width="-1" android:layout_height="-1" android:alpha="0.0" />
+    <com.google.android.material.internal.ClippableRoundedCornerLayout android:id="@2131231049" android:focusable="true" android:focusableInTouchMode="true" android:visibility="2" android:layout_width="-1" android:layout_height="-1">
+        <LinearLayout android:orientation="1" android:id="@2131231042" android:layout_width="-1" android:layout_height="-1">
+            <View android:id="@2131231052" android:visibility="2" android:layout_width="-1" android:layout_height="-2" />
+            <FrameLayout android:id="@2131231048" android:visibility="2" android:layout_width="-1" android:layout_height="-2" />
+            <FrameLayout android:id="@2131231054" android:layout_width="-1" android:layout_height="-2">
+                <com.google.android.material.appbar.MaterialToolbar android:layout_gravity="0x00800005" android:id="@2131231046" android:visibility="2" android:layout_width="-2" android:layout_height="-2" app:navigationIcon="@null" style="?materialSearchViewToolbarStyle" />
+                <com.google.android.material.appbar.MaterialToolbar android:id="@2131231053" android:clipChildren="false" android:layout_width="-1" android:layout_height="-2" app:navigationContentDescription="@string/searchview_navigation_content_description" style="?materialSearchViewToolbarStyle">
+                    <LinearLayout android:gravity="0x00000010" android:orientation="0" android:layout_width="-1" android:layout_height="?2130903800">
+                        <TextView android:id="@2131231051" android:visibility="2" android:layout_width="-2" android:layout_height="-2" style="?materialSearchViewPrefixStyle" />
+                        <EditText android:id="@2131231047" android:background="@0" android:layout_width="0.0dip" android:layout_height="-1" android:layout_weight="1.0" android:inputType="0x00080001" android:imeOptions="0x10000003" android:textDirection="1" android:importantForAutofill="0x00000002" />
+                        <ImageButton android:id="@2131231043" android:background="?2130903043" android:padding="16.0dip" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:contentDescription="@2131689627" app:srcCompat="@drawable/ic_clear_black_24" />
+                    </LinearLayout>
+                </com.google.android.material.appbar.MaterialToolbar>
+            </FrameLayout>
+            <View android:id="@2131231045" android:background="?2130903312" android:layout_width="-1" android:layout_height="@2131100122" />
+            <com.google.android.material.internal.TouchObserverFrameLayout android:id="@2131231044" android:layout_width="-1" android:layout_height="-1" />
+        </LinearLayout>
+    </com.google.android.material.internal.ClippableRoundedCornerLayout>
+</merge>
