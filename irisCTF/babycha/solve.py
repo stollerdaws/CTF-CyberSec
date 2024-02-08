@@ -1,7 +1,7 @@
 from pwn import *
 
 def connect_and_get_flag(length_of_input):
-    io = remote('babycha.chal.irisc.tf', 10100)
+    io = remote('ctf.cs.fsu.edu', 17000)
 
     # Encrypt arbitrary input of specified length
     io.recvuntil(b'> ')

@@ -2,10 +2,10 @@ import requests
 import string
 
 # Configuration
-url = 'https://whats-my-password-web.chal.irisc.tf/api/login'
+url = 'http://127.0.0.1:1337/api/login'
 USERNAME = 'skat'
 charset = string.printable + '{}_' # Including all ASCII characters from 32 to 126
-known_start = 'irisctf{my_p422W0RD_1S_SQl1}'   
+known_start = 'irisctf{'   
 password_length = 28
 
 # Function to check if a query returns a true condition

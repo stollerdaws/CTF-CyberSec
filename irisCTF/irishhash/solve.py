@@ -1,5 +1,5 @@
 import bcrypt
-from itertools import combinations
+from itertools import permutations
 from tqdm import tqdm
 
 def generate_and_check_hash(captions, dates, target_hash):
@@ -7,7 +7,7 @@ def generate_and_check_hash(captions, dates, target_hash):
     #captions = [word.lower() for word in captions]
 
     # Generating combinations of three words from the captions
-    word_combinations = list(combinations(captions, 3))
+    word_combinations = list(permutations(captions, 3))
 
     # Total combinations to process (for progress bar)
     total_combinations = len(word_combinations) * len(dates)
@@ -17,9 +17,10 @@ def generate_and_check_hash(captions, dates, target_hash):
         for date in dates:
             # Concatenate words with the date
             word = ''.join(combo) + date
-            #print(word)
+            print(word)
             # Hash the word using bcrypt
             hashed_word = bcrypt.hashpw(word.encode(), bcrypt.gensalt())
+            print(hashed_word)
             if hashed_word == target_hash:
                 return word
 
@@ -27,9 +28,8 @@ def generate_and_check_hash(captions, dates, target_hash):
 
 # Instagram captions
 captions = [
-    "Italy", "Amsterdam", "Swarovski", "Crystal", "Museum", "Sculptures",
-    "Portofino", "Mimosas", "Europe", "Tiramisu", "Starbucks", "Milan",
-     'Travel', 'Manhattan', 'Europe', 'London', "Vacation", 'April', 'Elaina'
+    "Italy", "Amsterdam", "Swarovski", "Crystal",
+    "Portofino", "Tiramisu", "Milan",
 ]
 
 # Important dates formatted as strings

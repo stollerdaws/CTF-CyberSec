@@ -1,0 +1,2 @@
+user: __proto__
+pass: a' OR '1' = '1' AND id = '1

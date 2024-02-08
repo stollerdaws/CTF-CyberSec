@@ -67,7 +67,7 @@ def encrypt(data):
         buffer = buffer[1:]
     return bytes(output)
 
-flag = b"fake_flag{FAKE_FLAG}"
+flag = b'FSUCTF{SO_REDACTED}'
 
 if __name__ == "__main__":
     print("""This cipher is approved by Disk Jockey B.

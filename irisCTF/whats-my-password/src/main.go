@@ -25,7 +25,7 @@ type Account struct {
 func startWeb() {
 	fmt.Println("Starting very secure login panel (promise)")
 
-	fs := http.FileServer(http.Dir("/home/user/web"))
+	fs := http.FileServer(http.Dir("/web"))
 	Mux.Handle("/", fs)
 
 	Mux.HandleFunc("/api/login", func(w http.ResponseWriter, r *http.Request) {

@@ -1,25 +1,24 @@
-# Build go app
-FROM golang:1.20 AS golang
-WORKDIR /src
-
+# Build stage for Go application
+FROM golang:1.20 AS builder
+WORKDIR /app
 COPY src/go.mod src/go.sum ./
-COPY src/*.go ./
-
 RUN go mod download
-RUN CGO_ENABLED=0 GOOS=linux go build -o /tmp/app
-
-# MySQL server
+COPY src/*.go ./
+RUN CGO_ENABLED=0 GOOS=linux go build -o myapp
+# Final stage with Ubuntu and MySQL
 FROM ubuntu:22.04
-WORKDIR /
+RUN apt-get update && apt-get install -y mysql-server && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update
-RUN apt-get install mysql-server -y
+# Copy the compiled app from the builder stage
+COPY --from=builder /app/myapp /myapp
 
-COPY setup.sql /tmp/
-COPY entrypoint.sh /tmp/
-COPY /src/web /web
-COPY --from=golang /tmp/app /tmp/app
+# Copy static files and scripts
+COPY src/web /web
+COPY setup.sql /setup.sql
+COPY entrypoint.sh /entrypoint.sh
 
-EXPOSE 10301
+# Set permissions and expose necessary port
+RUN chmod +x /entrypoint.sh
+EXPOSE 1337
 
-ENTRYPOINT ["/tmp/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
