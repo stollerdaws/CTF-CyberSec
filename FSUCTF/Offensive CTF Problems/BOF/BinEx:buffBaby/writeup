@@ -1,0 +1,12 @@
+This is a simple buffer overflow challenge. The program creates a 
+50 byte buffer, but then calls fgets with 0x50 as the argument which is 80
+So we need to find the offset of the flag variable. To do this we 
+can open gdb and type the following commands:
+b *main + 32    #This is where flag is set to 0xaabdcdee
+after this instruction we can step so the value will be updated,
+the next instruction will begin to fill the buffer with 0
+take note of the addresses that make up the destination of the mov instructions
+this is where our buffer will be allocated, the flag is at rbp - 4
+and the buffer starts at rbp - 64
+so our payload needs to be at an offset of 60 from the start of the buffer
+you could also just send a huge input of EEEE since thats what the flag is checking for, but that is not very elegant.

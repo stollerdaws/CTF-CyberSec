@@ -1,0 +1,12 @@
+So here we have  amore complicated Format String problem, but with increased
+complexity comes increased versatility. There are a dozen ways to make writes
+to end up getting the flag. The hint here is telling us that there are strings in memory
+which are writable, so if we can find the address to these strings, we can overwrite
+them with whatever we want. Also since ASLR is turned off, we can find the addresses of 
+instructions and jump to them as well. I chose to overwrite the logs file with flag,
+which is not exactly optional its by far the easiest way to get the flag to open
+then I overwrite the address of exit with the address of search so I can get that 
+function to run again.], this time searching the flag.
+Then I overwrite the address of strstr the substring function to jump
+down two lines so that no matter what it prints out the value of the first line in the file
+which happens to be our flag.

@@ -1,6 +1,6 @@
 from pwn import * 
 
-io = remote('saturn.picoctf.net', 63601)
+io = remote('ctf.cs.fsu.edu', 18880)
 exe = context.binary = ELF('vuln')
 #io = exe.process()
 #gdb.attach(io)

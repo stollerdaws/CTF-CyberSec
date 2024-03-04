@@ -1,0 +1,8 @@
+This is another buffer overflow where we have to overwrite a variable
+to pass a check that would call exit, then overwrite the return address to jump to win instad of main
+
+So, at 64 (the edge of the buffer), we overwrite the variable to 0xdeadbeef
+and at 80, we overwrite the return address to the address of win
+
+Check the binary in ghidra to see the decompiled source and use GDB
+or PWNtools to get the address of win

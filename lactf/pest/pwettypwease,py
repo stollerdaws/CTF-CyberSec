@@ -1,0 +1,9 @@
+ans = 'flag'
+pret = 'pretty'
+ples = 'please'
+
+for i in range(15):
+    ans += pret
+for i in range(39):
+    ans += ples
+print(ans)

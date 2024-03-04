@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flag Fetcher</title>
+</head>
+<body>
+    <h1>Flag Fetcher</h1>
+    <button id="fetchFlag">Fetch Flag</button>
+    <p id="flagLength">Flag Length: Waiting...</p>
+    <p id="flagOutput">Flag: (Not fetched yet)</p>
+
+    <script>
+        document.getElementById('fetchFlag').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/flag');
+                const buffer = await response.arrayBuffer();
+                const { instance } = await WebAssembly.instantiate(buffer, {});
+
+                // Display flag length
+                const flagLength = instance.exports.get_flag_length();
+                console.log('Flag length:', flagLength);
+                document.getElementById('flagLength').textContent = `Flag Length: ${flagLength}`;
+
+                // Execute get_flag to ensure any necessary memory operations are performed
+                instance.exports.get_flag();
+
+                // Assuming the flag is directly written to memory, adjust this offset as needed
+                const offset = 1024; // Adjust based on your understanding of memory layout
+                const memory = new Uint8Array(instance.exports.memory.buffer, offset, flagLength);
+                
+                let flag = '';
+                for (let i = 0; i < flagLength; i++) {
+                    flag += String.fromCharCode(memory[i]);
+                }
+
+                console.log('Flag:', flag);
+                document.getElementById('flagOutput').textContent = `Flag: ${flag}`;
+            } catch (err) {
+                console.error('Error fetching flag:', err);
+                document.getElementById('flagOutput').textContent = 'Failed to fetch the flag. See console for error details.';
+            }
+        });
+    </script>
+</body>
+</html>

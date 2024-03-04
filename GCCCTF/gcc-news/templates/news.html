@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News</title>
+</head>
+<body>
+    <h1>Welcome, {{ username }}!</h1>
+    {% if subscribe %}
+    <p>Thank you for subscribing. Here is your exclusive news content.</p>
+    {% else %}
+    <p>Welcome! Please subscribe to view exclusive content.</p>
+    {% endif %}
+    <a href="/">Back to Home</a>
+</body>
+</html>

